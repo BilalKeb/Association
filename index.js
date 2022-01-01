@@ -1,15 +1,16 @@
-const { json } = require('express');
+
 const express = require('express');
 const app = express();
-
+const port = 5000
+// const cors=installer
 // je recupere mes routes 
 const associationRoutes = require ("./Routes/association")
 
 app.use(express.json())
 
-// app.use('/association' , associationRoutes)
+app.use('/association' , associationRoutes)
 
-const port = 5000
+
 app.listen (port, () => {
     console.log('Server started on port: ' + port);
 })
